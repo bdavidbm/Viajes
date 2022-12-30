@@ -1,0 +1,34 @@
+<p *ngFor="let flight of flights">{{flight.departureStation}},{{flight.arrivalStation}}</p>
+<div class="dropdown p-2">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Origen
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" (click)="agregarOrigen(origen)" *ngFor="let origen of origenes" >
+        {{origen}}</a></li>
+    </ul>
+</div>
+<div class="dropdown p-2" *ngIf="salida">
+    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      destino
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" (click)="agregarDestino(destino)" *ngFor="let destino of destinos">
+            {{destino}}</a></li>
+    </ul>
+</div>
+<div>
+    <p>Origen:</p>
+    <p>{{salida}}</p>
+</div>
+<div>
+    <p>Destino:</p>
+    <p>{{llegada}}</p>
+</div>
+<div>
+    <p>rutas</p>
+    <div *ngFor="let ruta of rutas">
+        <p>origen: {{ruta.departureStation}}</p>
+        <p>destino: {{ruta.arrivalStation}}</p>
+    </div>
+</div>
